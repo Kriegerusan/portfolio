@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    position: relative;
+    font-family: lato;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    margin: 0;
+    box-shadow: 0px 0px 5px black;
+    background-color: grey;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    border: 1px solid;
+    border-radius: 5%;
+    box-shadow: 5px 5px 13px grey;
+}
+
+ul{
+    margin-top: 0;
+    height: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2em;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.presentation{
+    display: flex;
+    padding: 2em;
+    gap: 2em;
+}
+.presentation p{
+    align-content: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: grey;
+    width: 100%;
+    height: 5em;
+}
+
+footer .footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    align-items: end;
+}
+
+
+ 
+footer a i{
+    font-size: 2.5em;
+}
+
+footer ul{
+    display: flex;
+    justify-content: end;
+    gap: 2em;
+    padding-inline: 1em;
+}
+
+
+
+@font-face {
+    font-family: lato;
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: lato-thin;
+    src: url(../fonts/Lato-Thin.ttf);
+}
+
+/* ********** Weather Widget ********** */
+.weather-container{
+    display: flex;
+    gap: 1em;
+    overflow: scroll;
+    min-height: 10vh;
+    width: 70%;
+    margin-inline: auto;
+    margin-top: 1em;
+    padding: 1em;
+    align-items: center;
+    /* background-color: gray; */
+}
+
+
+.weather-card .date{
+    min-height: 1em;
+    text-align: center;
+}
+
+.weather-data-card{
+    text-align: center;
+    border-radius: 5%;
+    background-color: rgba(211, 211, 211, 0.75);
+    box-shadow: 2px 2px 3px rgb(54, 54, 54);
+    width: 6em;
+    min-height: 6em;
+}
+
+
+
+.weather-widget-parameters{
+    display: flex;
+}
