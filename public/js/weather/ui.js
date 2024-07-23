@@ -9,8 +9,8 @@ export class UI {
     let weatherDatas = new Weather();
     weatherDatas.getWeatherDatas(quantity);
     let weatherHourContainer = document.createElement("div");
-    document.body.appendChild(weatherHourContainer);
     weatherHourContainer.setAttribute("class", "weather-container");
+    document.getElementsByClassName('content-wrapper')[0].appendChild(weatherHourContainer);
     for (let i = 0; i < weatherDatas.times.length; i++) {
 
       this.createHourlyCard(weatherHourContainer, weatherDatas.times[i], weatherDatas.temperatures[i], weatherDatas.weatherCodes[i]);

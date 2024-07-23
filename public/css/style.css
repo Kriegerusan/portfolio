@@ -152,3 +152,22 @@ main{
 .weather-widget-parameters{
     display: flex;
 }
+
+
+/* ********** Contact ********** */
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+}
+
+form button{
+    width : 50%;
+    align-self: center;
+    height: 5vh;
+}
