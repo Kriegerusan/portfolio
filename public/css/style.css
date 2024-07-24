@@ -107,6 +107,12 @@ main{
     text-align: center;
 }
 
+/* ********** Fonts ********** */
+
+@font-face {
+    font-family: nixie;
+    src: url(../fonts/NixieOne.ttf);
+}
 
 @font-face {
     font-family: lato;
@@ -153,6 +159,14 @@ main{
     display: flex;
 }
 
+/* ********** Clock ********** */
+
+#nixieClock{
+    font-family: nixie;
+    color: orange;
+    font-weight: bold;
+    font-size: large;
+}
 
 /* ********** Contact ********** */
 form{
