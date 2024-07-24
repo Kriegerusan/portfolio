@@ -2,10 +2,3 @@
 /node_modules
 /package-lock.json
 /package.json
-
-### Images
-/public/uploads/
-
-### ini
-config/
-./DBConnection.ini
