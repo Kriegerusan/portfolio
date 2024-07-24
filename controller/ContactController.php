@@ -1,22 +1,34 @@
 <?php
-include "../view/base.html";
+
+const CONTACTCONTROLLER = new ContactController();
+
+CONTACTCONTROLLER->index();
 
 
-CreateContactForm();
+class ContactController
+{
 
+    public function index()
+    {
 
-include "../view/base/footer.html";
+        include "../view/base.html";
 
+        if (isset($_POST['submit'])) {
+            
+            
+            $contactEntity = new Contact($_POST['email'],$_POST['firstname'],$_POST['lastname'],$_POST['note']);
 
-function CreateContactForm(){
-    
+            header($_SERVER['PHP_SELF']);
+            // exit;
+        }else{
+            $this->form();
+        }
 
-    if(isset($_POST['submit'])){
-        
-
-        header($_SERVER['PHP_SELF']);
-        // exit;
+        include "../view/base/footer.html";
     }
 
-    include "../view/contact/contact.html";
+    private function form()
+    {
+        include "../view/contact/contact.html";
+    }
 }

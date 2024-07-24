@@ -4,15 +4,15 @@ class Contact
 {
     private $id;
     private $email;
-    private $prenom;
-    private $nom;
+    private $firstname;
+    private $lastname;
     private $note;
     
-    function __construct($email, $prenom, $nom, $note)
+    function __construct($email, $firstname, $lastname, $note)
     {
         $this->email = $email;
-        $this->prenom = $prenom;
-        $this->nom = $nom;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
         $this->note = $note;
         return $this;
     }
@@ -27,14 +27,14 @@ class Contact
         return $this->email;
     }
 
-    public function getPrenom(): string
+    public function getfirstname(): string
     {
-        return $this->prenom;
+        return $this->firstname;
     }
 
     public function getNom(): string
     {
-        return $this->nom;
+        return $this->lastname;
     }
 
     public function getNote(): string
@@ -54,15 +54,15 @@ class Contact
         return $this;
     }
 
-    public function setPrenom($newPrenom): Contact
+    public function setfirstname($newfirstname): Contact
     {
-        $this->prenom = $newPrenom;
+        $this->firstname = $newfirstname;
         return $this;
     }
 
     public function setNom($newNom): Contact
     {
-        $this->nom = $newNom;
+        $this->lastname = $newNom;
         return $this;
     }
 
