@@ -1,10 +1,11 @@
-# Node.js
-node_modules
-package-lock.json
-package.json
+### Node.js
+/node_modules
+/package-lock.json
+/package.json
 
-# Images
-public/uploads/
+### Images
+/public/uploads/
 
-# ini
-config/DBConnection.ini
+### ini
+config/
+./DBConnection.ini
