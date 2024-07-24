@@ -1,10 +1,31 @@
 <?php
+require "DatabaseConnection.php";
+
 class ContactSQL{
 
-    public function create(Contact $contact)
+    const INSERT_REQUEST = "INSERT INTO contacts (email, lastname, firstname, message) values (:email, :lastname, :firstname, :message);";
+
+    public static function create(Contact $contact)
     {
-         $request = "INSERT INTO contact (email,lastname,firstname,message) values (:email, :lastname, :firstname, :message);";
-         
+        try{
+
+        $request = DatabaseConnection::connect()->prepare(self::INSERT_REQUEST);
+        $request->bindValue(":email", $contact->getEmail());
+        $request->bindValue(":lastname", $contact->getLastname());
+        $request->bindValue(":firstname", $contact->getFirstname());
+        $request->bindValue(":message", $contact->getMessage());
+        
+        $request->execute();
+
+
+        }
+        catch(Exception $e)
+        {
+            echo "Erreur : " . $e->getMessage();
+        }
+
+
+
     }
 
 }

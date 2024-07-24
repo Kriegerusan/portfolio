@@ -1,19 +1,26 @@
 <?php
 
+require "ContactSQL.php";
+
 class Contact
 {
     private $id;
     private $email;
     private $firstname;
     private $lastname;
-    private $note;
+    private $message;
     
-    function __construct($email, $firstname, $lastname, $note)
+    function __construct($email, $firstname, $lastname, $message)
     {
-        $this->email = $email;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->note = $note;
+        // $this->email = $email;
+        // $this->firstname = $firstname;
+        // $this->lastname = $lastname;
+        // $this->message = $message;
+        $this
+        ->setEmail($email)
+        ->setFirstname($firstname)
+        ->setLastname($lastname)
+        ->setMessage($message);
         return $this;
     }
 
@@ -27,19 +34,19 @@ class Contact
         return $this->email;
     }
 
-    public function getfirstname(): string
+    public function getFirstname(): string
     {
         return $this->firstname;
     }
 
-    public function getNom(): string
+    public function getLastname(): string
     {
         return $this->lastname;
     }
 
-    public function getNote(): string
+    public function getMessage(): string
     {
-        return $this->note;
+        return $this->message;
     }
 
     public function setId($newId): Contact
@@ -54,22 +61,27 @@ class Contact
         return $this;
     }
 
-    public function setfirstname($newfirstname): Contact
+    public function setFirstname($newFirstname): Contact
     {
-        $this->firstname = $newfirstname;
+        $this->firstname = $newFirstname;
         return $this;
     }
 
-    public function setNom($newNom): Contact
+    public function setLastname($newLastname): Contact
     {
-        $this->lastname = $newNom;
+        $this->lastname = $newLastname;
         return $this;
     }
 
-    public function setNote($newNote): Contact
+    public function setMessage($newMessage): Contact
     {
-        $this->note = $newNote;
+        $this->message = $newMessage;
         return $this;
+    }
+
+    public function create(Contact $contactEntity)
+    {
+        ContactSQL::create($contactEntity);
     }
 
 }

@@ -1,5 +1,7 @@
 <?php
 
+require "../model/Contact.php";
+
 const CONTACTCONTROLLER = new ContactController();
 
 CONTACTCONTROLLER->index();
@@ -16,10 +18,11 @@ class ContactController
         if (isset($_POST['submit'])) {
             
             
-            $contactEntity = new Contact($_POST['email'],$_POST['firstname'],$_POST['lastname'],$_POST['note']);
+            $contactEntity = new Contact($_POST['email'],$_POST['firstname'],$_POST['lastname'],$_POST['message']);
+            $contactEntity->create($contactEntity);
 
-            header($_SERVER['PHP_SELF']);
-            // exit;
+            header("location: HomeController.php");
+            exit;
         }else{
             $this->form();
         }
