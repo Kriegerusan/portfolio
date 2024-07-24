@@ -1,5 +1,5 @@
 <?php
-require "DatabaseConnection.php";
+require "../libs/DatabaseConnection.php";
 
 class ContactSQL{
 
